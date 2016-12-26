@@ -59,7 +59,6 @@ iOSImage.prototype.__onImageContext = function(action, tag) {
         UIGraphicsEndImageContext();
     }
 
-    CGImageRelease(oldImg.CGImage);
     this._nativeObject = newImage;
 
     return result;
@@ -97,7 +96,6 @@ iOSImage.prototype._crop = function(leftTop, size) {
 
 // _dispose()
 iOSImage.prototype._dispose = function(action, tag) {
-    CGImageRelease(this._nativeObject.CGImage);
     this._nativeObject = null;
 };
 
